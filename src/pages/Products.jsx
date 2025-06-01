@@ -2,9 +2,11 @@ import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 
 
+import { CiSearch } from "react-icons/ci";
 import Table from "../components/table/Table";
 import { utcToLocal } from "../utils/dateUtils";
-import { fetchProducts } from "../api/productApi";
+import { fetchProducts, searchProduct } from "../api/productApi";
+
 
 const headers = [
     { label: 'Created At', key: 'createdAt' },
@@ -33,23 +35,37 @@ const Products = () => {
     }, []);
 
     const handleAddProduct = () => {
-        
+
         navigate('/products/add-product');
     }
-   const handleViewProduct = (productId) => {
+    const handleViewProduct = (productId) => {
         navigate(`/products/${productId}`);
     }
+     const handlesearch = async (e) =>{
+        const queryParam=(e.target.value.trim());
+         const products = await searchProduct(queryParam);
+         setData({products});
+
+
+     }
 
 
     return (
         <div className="">
             <div className="flex ">
                 <div className=" flex wrapper">
-                <h1 className="">Products</h1>
-                <div className="flex align-items-center">
-                    <button className="mr-15" onClick={handleAddProduct} >Add Product</button>
+                    <h1 className="">Products</h1>
+                    <div className="flex align-items-center">
+
+                        <button className="mr-15" onClick={handleAddProduct} >Add Product</button></div>
+                        <div className="searchbarwrapper">
+
+                        <div className="searchicon"><CiSearch /></div>
+                        <div className="mysearch flex">
+                        <input type="text" placeholder="Search Product" onChange={handlesearch} />
+                    </div>
+                    </div>
                 </div>
-            </div>
             </div>
             <Table headers={headers}>
                 {
@@ -60,7 +76,7 @@ const Products = () => {
                             </tr>
                         )
                         : (data.products?.map((product) => (
-                            <tr key={product.id}onClick={()=>handleViewProduct(product.id)}>
+                            <tr key={product.id} onClick={() => handleViewProduct(product.id)}>
                                 <td>{utcToLocal(product.meta.createdAt)}</td>
                                 <td>{product.title}</td>
                                 <td>

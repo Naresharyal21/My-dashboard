@@ -36,3 +36,11 @@ export const deleteProduct =  async (productId) =>{
   })
   return response.data;
 };
+
+export const searchProduct =  async (queryParam) =>{
+  const response =   await axios ({
+    url:`https://dummyjson.com/products/search?q=${queryParam}`
+  })
+  return response.data.products
+
+};
