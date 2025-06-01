@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.dashboard-content {
+  grid-column: 2;
+}
+
+.sidebar {
+  position: fixed;
+  width: 260px;
+  height: 100vh;
+  background-color: #1e1e1e;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  position: fixed;
+}
+
+.w-space-available {
+  width: -webkit-fill-available;
+}
+
+.justify-content-right {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.user-avatar {
+  background-color: rgb(170, 42, 170);
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.mr-15 {
+  margin-left: 15px;
+}
+
+.content {
+  padding: 15px 40px;
+  margin-top: 55px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 55px;
+}
+
+.table {
+  width: max-content;
+}
+.table thead tr {
+  text-align: left;
+}
+
+.table thead tr th,
+td {
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #02b689;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #029f7a;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+select:focus {
+  outline: none;
+  border: 1px solid #7cc4ff;
+  box-shadow: 0 0 5px #7cc4ff;
+}
+
+input[type="submit"] {
+  background-color: #02b689;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.is-invalid {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.add-product-form {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.wrapper {
+  position: fixed;
+  background-color: white;
+  margin-top: -15px;
+  padding: 5px;
+  width: 100%;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.myProductImages{
+    flex-direction:column;
+     height: 330px;
+  width: 330px;
+}
+.viewImage {
+  width: 330px;
+  height: 330px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.viewImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.images{
+  height: 52px;
+  width: 52px;
+}
+.images img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.gallaryImage img:hover {
+  transform: translate3d(0, -10px, 0);
+  transition: transform 0.3s ease;
+}
+.margintop{
+  margin-top: 40px;
+}
+/*  right side my details css part */
+ .myproductsdetails {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+.myproductsdetails h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+.myproductsdetails h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+}
+.rating {
+
+  font-size: 16px;
+  color: #f39c12;
+}
+.myBarnd {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #444;
+}
+.price {
+  font-size: 24px;
+  color: #02b689;
+  font-weight: bold;
+}
+.returnPolicy {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.quantity button {
+  padding: 6px 12px;
+  font-size: 20px;
+  background-color: #eee;
+  color: #333;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.myclickBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.myclickBtns button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.myclickBtns button:first-child {
+  background-color: #02b689;
+  color: white;
+}
+
+.myclickBtns button:last-child {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.myclickBtns button:hover {
+  opacity: 0.9;
+}
+.mybtn button {
+  
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.mybtn button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
