@@ -11,13 +11,13 @@ const Home = () => {
 export default Home;
 
 /**
- * Add products /products/add
- * Edit products /products/edit/:id
- * Delete products /products/delete/:id
+ * Add products /products/add ok
+ * Edit products /products/edit/:id ok
+ * Delete products /products/delete/:id ok
  * List products /products
  * Filter products
  * Sort products
- * Search products
+ * Search products ok
  * Pagination
  * 
  */

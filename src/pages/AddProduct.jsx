@@ -8,24 +8,26 @@ import { addProduct } from "../api/productApi";
 const productSchema = object({
     title: string()
         .required("Title is required.")
-        .min(5, "Title must be at least 3 characters long.")
+        .min(5, "Title must be at least 5 characters long.")
         .max(50, "Title must be at most 50 characters long."),
 
     description: string()
         .required("Description is required.")
-        .min(5, "Description must be at least 10 characters long.")
-        .max(50, "Description must be at most 100 characters long."),
+        .min(10, "Description must be at least 10 characters long.")
+        .max(100, "Description must be at most 100 characters long."),
 
     price: number()
+        .typeError("Price must be a number.")
         .required("Price is required.")
         .positive("Price must be a positive number.")
-        .min(0, "Price must be at least 1.")
-        .max(100000, "Price must be at most 10000."),
+        .min(1, "Price must be at least 1.")
+        .max(100000, "Price must be at most 100000."),
 
     brand: string()
         .required("Brand is required.")
-        .oneOf(["Apple", "Samsung", "Sony", "LG", "Nokia"], "Brand must be one of the predefined options.")
+        .oneOf(["Apple", "Samsung", "Sony", "LG", "Nokia"], "Brand must be one of the predefined options."),
 });
+
 
 const AddProduct = () => {
     const {

@@ -10,7 +10,7 @@ import { fetchProducts, searchProduct } from "../api/productApi";
 
 const headers = [
     { label: 'Created At', key: 'createdAt' },
-    { label: 'Title', key: 'title' },
+    { label: 'Title', key: 'title' } ,
     { label: 'Thumbnail', key: 'thumbnail' },
     { label: 'Price', key: 'price' },
     { label: 'Category', key: 'category' },
@@ -78,7 +78,10 @@ const Products = () => {
                         : (data.products?.map((product) => (
                             <tr key={product.id} onClick={() => handleViewProduct(product.id)}>
                                 <td>{utcToLocal(product.meta.createdAt)}</td>
-                                <td>{product.title}</td>
+                                <td>{product.title}  
+
+                                </td>
+                                
                                 <td>
                                     <img src={product.thumbnail} alt={product.title} style={{ width: '50px', height: '50px' }} />
                                 </td>

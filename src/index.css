@@ -196,8 +196,8 @@ input[type="submit"] {
   padding: 5px;
   width: 100%;
 }
-.row-reverse {
-  flex-direction: row-reverse;
+.spacebetween {
+  justify-content: space-between;
 }
 .myProductImages{
     flex-direction:column;
@@ -339,6 +339,9 @@ input[type="submit"] {
 
 .mybtn button:hover {
   background-color: #c0392b;
+}
+.mybtn2 button:hover {
+  background-color: #475005;
 }
  .searchbarwrapper{
   margin-top: 10px;

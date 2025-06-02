@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { IoIosAdd } from "react-icons/io";
 import { RiSubtractFill } from "react-icons/ri";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 import { deleteProduct, fetchProductById } from "../api/productApi"
@@ -12,6 +13,7 @@ import { deleteProduct, fetchProductById } from "../api/productApi"
 const ProductDetail = () => {
     const navigate = useNavigate();
     const { productID } = useParams();
+    console.log("Editing product with ID:", productID);
     const [product, setproduct] = useState({});
     const [count, setcount] = useState(1);
 
@@ -27,6 +29,8 @@ const ProductDetail = () => {
         fetchProductDetails()
     }, [productID]);
 
+    const notify = () => toast("Product Deleted Sucessfull");
+
     const handleinc = () => {
         const newcount = count + 1;
         setcount(newcount);
@@ -38,13 +42,26 @@ const ProductDetail = () => {
     const handleBuy = () => {
         navigate('/underConstruction')
     };
-    const handleDeleteProduct = async() =>{
-const updatedProducts = await deleteProduct(productID);
-setproduct(updatedProducts);
-navigate('/products')
-
-
+    const handleDeleteProduct = async () => {
+        notify();
+        const updatedProducts = await deleteProduct(productID);
+        setproduct(updatedProducts);
+        navigate('/products')
     };
+    const handleEditProduct = async (productID) => {
+        navigate(`/editproduct/${productID}`);
+
+
+    }
+
+
+
+
+
+
+
+
+
     return (
         <div className="flex margintop ">
 
@@ -72,7 +89,11 @@ navigate('/products')
             </div>
 
             <div className="myproductsdetails">
-                <div className="row-reverse flex mybtn "><button onClick={handleDeleteProduct}>Delete this Product </button></div>
+                <div className="mybuttonWrapper flex spacebetween ">
+                <div className="flex mybtn "><button onClick={handleDeleteProduct}>Delete this Product </button></div>
+                <div className="  mybtn2 "><button onClick={() => handleEditProduct(productID)}>Edit my product</button>
+                </div>
+                </div>
                 {/* <h1>ProductDetail{productID}</h1> */}
                 <h1>{product.title}</h1>
                 <h4>{product.description}</h4>
@@ -98,10 +119,7 @@ navigate('/products')
                     <button onClick={handleinc}><IoIosAdd />
                     </button>
                 </div>
-                <div className="myclickBtns">
-                    <button onClick={handleBuy}>Buy Now</button>
-                    <button onClick={handleBuy}>Add To cart</button>
-                </div>
+
                 {/* <pre>{JSON.stringify(product, null, 2)}</pre> */}
 
             </div>

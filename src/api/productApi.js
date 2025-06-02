@@ -44,3 +44,20 @@ export const searchProduct =  async (queryParam) =>{
   return response.data.products
 
 };
+export const updateProduct = async (productId, data) => {
+  const response = await axios({
+    method: 'PUT',
+    url: `https://dummyjson.com/products/${productId}`,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: data,
+  });
+  return response.data;
+};
+  export const sortProduct = async() =>{
+ const response = await axios ({
+url:'https://dummyjson.com/products?sortBy=title&order=asc'
+ })
+  return response.data;
+  }

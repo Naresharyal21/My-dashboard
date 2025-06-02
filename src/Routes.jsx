@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import AddProduct from './pages/AddProduct';
+import EditProduct from './pages/EditProduct';
 import PageNotFound from './pages/PageNotFound';
 import ProductDetail from './pages/ProductDetail';
 import DashboardLayout from './layouts/DashboardLayout';
@@ -24,6 +25,9 @@ const AppRoutes = () => {
 
             <Route path="*" element={<PageNotFound />} />
             <Route path="/underConstruction" element={<UnderConstruction/>} />
+            <Route path='/editproduct/:productID' element={<EditProduct />} />
+
+
         </Routes>
     )
 }
