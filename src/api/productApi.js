@@ -22,6 +22,7 @@ export const addProduct = async (product) => {
 
   return response.data;
 };
+
 export const fetchProductById = async (productId)=>{
   const response =  await axios({
     method:"get",
@@ -29,6 +30,7 @@ export const fetchProductById = async (productId)=>{
   })
   return response.data;
 };
+
 export const deleteProduct =  async (productId) =>{
   const response = await axios ({
    method: 'DELETE',
@@ -44,6 +46,7 @@ export const searchProduct =  async (queryParam) =>{
   return response.data.products
 
 };
+
 export const updateProduct = async (productId, data) => {
   const response = await axios({
     method: 'PUT',
@@ -55,9 +58,17 @@ export const updateProduct = async (productId, data) => {
   });
   return response.data;
 };
+
   export const sortProduct = async() =>{
  const response = await axios ({
 url:'https://dummyjson.com/products?sortBy=title&order=asc'
  })
   return response.data;
   }
+  
+   export const filterProduct = async() =>{
+const response = await axios({
+  url:`https://dummyjson.com/products/${categorylist}`
+})
+return response.data;
+   }

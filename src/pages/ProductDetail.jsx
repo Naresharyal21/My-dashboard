@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { IoIosAdd } from "react-icons/io";
 import { RiSubtractFill } from "react-icons/ri";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 
 import { deleteProduct, fetchProductById } from "../api/productApi"

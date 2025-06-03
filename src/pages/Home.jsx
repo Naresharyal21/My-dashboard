@@ -14,9 +14,9 @@ export default Home;
  * Add products /products/add ok
  * Edit products /products/edit/:id ok
  * Delete products /products/delete/:id ok
- * List products /products
+ * List products /products ok
  * Filter products
- * Sort products
+ * Sort products ok
  * Search products ok
  * Pagination
  * 

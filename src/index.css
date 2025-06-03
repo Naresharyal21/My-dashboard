@@ -360,7 +360,19 @@ padding-left: 5px;
   border-radius: 4px;
   font-size: 1rem;
 
+
  }
+  .noStyle{
+     all: unset; 
+     padding: 10px 10px;
+      
+      border-radius: 50px;
+    
+  }
+  .noStyle:hover{
+    background-color: #e7c29d;
+      cursor: pointer;
+  }
 
 
 

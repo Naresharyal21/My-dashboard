@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router';
 
 import Home from './pages/Home';
 import About from './pages/About';
+import Login from './pages/Login';
 import Products from './pages/Products';
 import AddProduct from './pages/AddProduct';
 import EditProduct from './pages/EditProduct';
@@ -9,6 +10,7 @@ import PageNotFound from './pages/PageNotFound';
 import ProductDetail from './pages/ProductDetail';
 import DashboardLayout from './layouts/DashboardLayout';
 import UnderConstruction from './pages/UnderConstruction';
+import AuthLayout from './layouts/AuthLayout';
 
 const AppRoutes = () => {
     return (
@@ -26,7 +28,10 @@ const AppRoutes = () => {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/underConstruction" element={<UnderConstruction/>} />
             <Route path='/editproduct/:productID' element={<EditProduct />} />
-
+           
+            <Route element={<AuthLayout/>}>
+            <Route path="/auth/login" element={<Login />} />
+            </Route>
 
         </Routes>
     )
