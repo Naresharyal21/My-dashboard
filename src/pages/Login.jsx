@@ -1,11 +1,10 @@
-
 import { useContext } from 'react';
 import { string, object } from 'yup';
 import { toast } from 'react-toastify';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 
-import AuthContext, { AuthenticationContext } from '../components/AuthContext';
+import { AuthenticationContext } from '../components/AuthContext';
 import { useNavigate } from 'react-router';
 
 const loginSchema = object({
@@ -39,7 +38,6 @@ const Login = () => {
 
         loginUser({
             email: data.email,
-            password: data.password,
             name: "John Doe"
         });
 

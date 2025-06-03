@@ -12,8 +12,12 @@ import DashboardLayout from './layouts/DashboardLayout';
 import UnderConstruction from './pages/UnderConstruction';
 import AuthLayout from './layouts/AuthLayout';
 
+import MyThemeContext from './components/MyThemeContext';
+
 const AppRoutes = () => {
     return (
+        <MyThemeContext>
+
         <Routes>
 
             <Route element={<DashboardLayout />}>
@@ -31,9 +35,11 @@ const AppRoutes = () => {
            
             <Route element={<AuthLayout/>}>
             <Route path="/auth/login" element={<Login />} />
+           
             </Route>
 
         </Routes>
+        </MyThemeContext>
     )
 }
 

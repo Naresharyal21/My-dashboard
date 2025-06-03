@@ -88,7 +88,7 @@ const ProductDetail = () => {
 
             </div>
 
-            <div className="myproductsdetails">
+            <div className= "myproductsdetails ">
                 <div className="mybuttonWrapper flex spacebetween ">
                 <div className="flex mybtn "><button onClick={handleDeleteProduct}>Delete this Product </button></div>
                 <div className="  mybtn2 "><button onClick={() => handleEditProduct(productID)}>Edit my product</button>

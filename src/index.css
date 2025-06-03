@@ -23,6 +23,7 @@ select {
 .flex-col {
   display: flex;
   flex-direction: column;
+  
 }
 
 .dashboard-layout {
@@ -104,8 +105,10 @@ select {
 }
 
 .content {
-  padding: 15px 40px;
+ padding-top: 10px;
   margin-top: 55px;
+  
+
 }
 
 .table-wrapper {
@@ -154,7 +157,7 @@ input[type="number"],
 select:focus {
   outline: none;
   border: 1px solid #7cc4ff;
-  box-shadow: 0 0 5px #7cc4ff;
+  box-shadow: 0 0 5px #121212;
 }
 
 input[type="submit"] {
@@ -183,18 +186,22 @@ input[type="submit"] {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
+    
 }
 .add-product-form {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 50px;
+ 
 }
 .wrapper {
   position: fixed;
-  background-color: white;
+ background-color: #ffffff;
   margin-top: -15px;
   padding: 5px;
   width: 100%;
+  
+
 }
 .spacebetween {
   justify-content: space-between;
@@ -373,6 +380,25 @@ padding-left: 5px;
     background-color: #e7c29d;
       cursor: pointer;
   }
+  .light {
+  transition: background-color 0.51s ease, color 0.51s ease;
+   background-color: #fff;
+ background-color: #f0f0f0;
+ 
+}
+.dark {
+  transition: background-color 0.51s ease, color 0.51s ease;
+   background-color: #fff;
+   background-color: rgb(122, 117, 117);
+  color: rgb(29, 56, 93);
+}
+.mytogglebtns button {
+   background-color: #f0f0f0;
+   color: #a49048;
+
+}
+
+
 
 
 

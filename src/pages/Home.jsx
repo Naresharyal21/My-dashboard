@@ -2,7 +2,7 @@ import Sidebar from "../components/Sidebar";
 
 const Home = () => {
     return (
-        <div className="flex">
+        <div className="flex Home-container">
             <h1>My Dashboard</h1>
         </div>
     )

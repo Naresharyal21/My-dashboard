@@ -70,7 +70,7 @@ const Products = () => {
 
 
     return (
-        <div className="">
+        <div className={theme}>
             <div className="flex ">
                 <div className=" flex wrapper">
                     <h1 className="">Products</h1>
